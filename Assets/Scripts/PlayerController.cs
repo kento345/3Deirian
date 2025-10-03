@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputVer;
     //-----ŒŠ–x-----
     [SerializeField] private GameObject HolePrefab;
-    [SerializeField] private Transform HolePos;
+    [SerializeField] private GameObject HolePos;
 
 
      
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Instantiate(HolePrefab, HolePos);
+            Instantiate(HolePrefab, HolePos.transform.position,Quaternion.identity);
         }
     }
 
