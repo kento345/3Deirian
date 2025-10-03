@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 655931063302785159}
   - component: {fileID: 8038234805623638230}
   - component: {fileID: 2484351588356407894}
-  - component: {fileID: 7121508034562195301}
+  - component: {fileID: 3824873949671371586}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -56,10 +56,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3313251
+  m_Radius: 0.40777212
   m_Height: 1.3626814
   m_Direction: 1
-  m_Center: {x: -0.026339531, y: 0.6813407, z: 0.002792865}
+  m_Center: {x: -0.009203434, y: 0.6813407, z: 0.033648014}
 --- !u!114 &8038234805623638230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,10 +73,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  magnitude: 0
   HolePrefab: {fileID: 2507348670015246987, guid: 2cc36d657c2ef8949aae3eef86b1edee, type: 3}
   HolePos: {fileID: 6071649308021073090}
-  animator: {fileID: 7121508034562195301}
+  animator: {fileID: 5640508046477605666}
 --- !u!114 &2484351588356407894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,28 +206,33 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &7121508034562195301
-Animator:
-  serializedVersion: 7
+--- !u!54 &3824873949671371586
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5372361651288557717}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e881dc1bbfef541128412f756177a293, type: 3}
-  m_Controller: {fileID: 9100000, guid: f1b0f3ca2dd204cedb1f019dbeff7b97, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &6071649308021073090
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +509,11 @@ PrefabInstance:
 --- !u!4 &1776442430375747928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e881dc1bbfef541128412f756177a293, type: 3}
+  m_PrefabInstance: {fileID: 2246603002121488051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5640508046477605666 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: e881dc1bbfef541128412f756177a293, type: 3}
   m_PrefabInstance: {fileID: 2246603002121488051}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5724069835632919076 stripped

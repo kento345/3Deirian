@@ -6,13 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     //-----ˆÚ“®-----
     [SerializeField] private float speed = 10;
-    [SerializeField] private float magnitude;
     private Vector2 inputVer;
     //-----ŒŠ–x-----
     [SerializeField] private GameObject HolePrefab;
     [SerializeField] private GameObject HolePos;
 
-
+    [SerializeField] private bool isDigging = false;
      
     [SerializeField] private Animator animator;
 
@@ -25,6 +24,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             Instantiate(HolePrefab, HolePos.transform.position,Quaternion.identity);
+            isDigging = true;
+        }
+        if(context.canceled)
+        {
+            isDigging = false;
         }
     }
 
@@ -32,14 +36,13 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        
+        animator.SetBool("IsDigging", isDigging);
     }
 
     void Move()
     {
-       magnitude = inputVer.magnitude;
+        float magnitude = inputVer.magnitude;
         
-
         Vector3 move = new Vector3(inputVer.x,0,inputVer.y) * speed * Time.deltaTime;
         transform.position += move;
 
